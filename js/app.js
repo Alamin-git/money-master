@@ -1,4 +1,4 @@
-function input(inputAmount) {
+function inputValue(inputAmount) {
     const totalInput = document.getElementById(inputAmount);
     const totalInputText = totalInput.value;
     const totalAmount = parseFloat(totalInputText);
@@ -9,17 +9,17 @@ function input(inputAmount) {
 
 document.getElementById('calculate-btn').addEventListener('click', function () {
     // income Input fild 
-    const incomeAmount = input('income-input');
+    const incomeAmount = inputValue('income-input');
 
     // food Input fild 
-    const foodAmount = input('food-input')
+    const foodAmount = inputValue('food-input')
 
 
     // rent input fild 
-    const rentAmount = input('rent-input');
+    const rentAmount = inputValue('rent-input');
 
     // clothes input fild 
-    const clothesAmount = input('clothes-input')
+    const clothesAmount = inputValue('clothes-input')
 
 
     // expenses total 
@@ -27,9 +27,15 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
     const expensesText = expensesTotal.innerText;
     const expensesTotalAmount = parseFloat(expensesText);
 
+    const totalExpenses = foodAmount + rentAmount + clothesAmount;
+    expensesTotal.innerText = totalExpenses;
 
-    expensesTotal.innerText = foodAmount + rentAmount + clothesAmount;
-    console.log(expensesText);
+    // balance left update  
+    const balaceLeft = document.getElementById('balance-left')
+    const balanceLeftText = balaceLeft.innerText;
+    const balaceLeftAmount = parseFloat(balanceLeftText);
+
+    balaceLeft.innerText = incomeAmount - totalExpenses;
 })
 
 
