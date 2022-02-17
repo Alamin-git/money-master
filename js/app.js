@@ -1,8 +1,12 @@
+// Input Function 
 function inputValue(inputAmount) {
     const totalInput = document.getElementById(inputAmount);
     const totalInputText = totalInput.value;
     const totalAmount = parseFloat(totalInputText);
     return totalAmount;
+
+};
+function outputValue(idName) {
 
 }
 
