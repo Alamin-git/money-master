@@ -21,17 +21,17 @@
     <!-- main section  -->
     <main>
         <section class="container text-center mb-4">
-            <div class="row gx-5">
+            <div class="row g-5">
                 <div class="col-lg-6 col-md-6 ">
                     <img class="img-fluid img" src="image/save-money.jpg" alt="">
                 </div>
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-6 col-md-6 fild">
                     <div>
                         <h3 class="fw-bold">Income</h3>
                         <label for="income-input">Income:</label>
                         <input id="income-input" class="mb-3 input" type="text">
                     </div>
-                    <div>
+                    <div id="fild">
                         <h3 class="mb-3 fw-bold">Expenses</h3>
                         <label for="fname">Food:</label>
                         <input id="food-input" class="mb-3 input food" type="text"><br>
@@ -39,9 +39,11 @@
                         <input id="rent-input" class="mb-3 input rent" type="text"><br>
                         <label for="fname">Clothes:</label>
                         <input id="clothes-input" class="mb-3 input" type="text"><br>
-                        <button id="calculate-btn" class="mb-3 btn btn-primary">Calculate</button>
                     </div>
                     <div>
+                        <button id="calculate-btn" class="mb-3 btn btn-primary">Calculate</button>
+                    </div>
+                    <div id="ballance">
                         <h2 class="mb-3">Total Expenses: <span id="expenses-total">000</span></h2>
                         <h2 class="mb-3">Balance: <span id="balance-left">000</span></h2>
                     </div>

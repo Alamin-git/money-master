@@ -3,17 +3,12 @@ function inputValue(inputAmount) {
     const totalInput = document.getElementById(inputAmount);
     const totalInputText = totalInput.value;
     const totalAmount = parseFloat(totalInputText);
-    return totalAmount;
-
-};
-// left balence calculation
-function outputValue(idName, income, expenses) {
-    const balaceLeft = document.getElementById(idName)
-    const balanceLeftText = balaceLeft.innerText;
-    const balaceLeftAmount = parseFloat(balanceLeftText);
-    const laftAmount = income - expenses;
-    balaceLeft.innerText = laftAmount;
-    return laftAmount;
+    if (totalInputText >= 0) {
+        return totalAmount;
+    }
+    else {
+        alert('Please, Input Positive Number');
+    }
 };
 // expenses total calculation
 function expenses(idName, food, rent, clothes) {
@@ -23,6 +18,21 @@ function expenses(idName, food, rent, clothes) {
     const totalExpenses = food + rent + clothes;
     expensesTotal.innerText = totalExpenses;
     return totalExpenses;
+};
+// left balence calculation
+function outputValue(idName, income, expenses) {
+    const balaceLeft = document.getElementById(idName)
+    const balanceLeftText = balaceLeft.innerText;
+    const balaceLeftAmount = parseFloat(balanceLeftText);
+    const laftAmount = income - expenses;
+    if (income >= expenses) {
+        balaceLeft.innerText = laftAmount;
+        return laftAmount;
+    }
+    else {
+        alert('Please, check your amount numbers');
+    }
+
 };
 
 
@@ -63,6 +73,7 @@ document.getElementById('save-btn').addEventListener('click', function () {
     saveing.innerText = totalSaveingAmount;
 
     // Remaining Balance calculation 
+
     const remainingTotal = document.getElementById('remaining-balance');
     const remainingTotalText = remainingTotal.innerText;
     const remainingBalance = parseFloat(remainingTotalText);
@@ -70,7 +81,7 @@ document.getElementById('save-btn').addEventListener('click', function () {
     remainingTotal.innerText = remainingTotalBalance;
 
 
-})
+});
 
 
 

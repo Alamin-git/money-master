@@ -1,8 +1,12 @@
 /* image sizeing */
 .img{
     height: 590px;
+    object-fit: cover;
 }
-
+/* right bg color */
+.fild {
+    background: #d3cacaa1;
+}
 .input{
     background: #DCDCDC;
     border: 1px solid #6d6d6d;
