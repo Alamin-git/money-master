@@ -1,0 +1,17 @@
+/* image sizeing */
+.img{
+    height: 590px;
+}
+
+.input{
+    background: #DCDCDC;
+    border: 1px solid #6d6d6d;
+    border-radius: 2px;
+}
+/* input fild align */
+.rent{    
+    margin-left: 21px;
+}
+.food{
+    margin-left: 17px;
+}
