@@ -6,9 +6,24 @@ function inputValue(inputAmount) {
     return totalAmount;
 
 };
-function outputValue(idName) {
-
-}
+// left balence 
+function outputValue(idName, income, expenses) {
+    const balaceLeft = document.getElementById(idName)
+    const balanceLeftText = balaceLeft.innerText;
+    const balaceLeftAmount = parseFloat(balanceLeftText);
+    const laftAmount = income - expenses;
+    balaceLeft.innerText = laftAmount;
+    return laftAmount;
+};
+// expenses total 
+function expenses(idName, food, rent, clothes) {
+    const expensesTotal = document.getElementById(idName);
+    const expensesText = expensesTotal.innerText;
+    const expensesTotalAmount = parseFloat(expensesText);
+    const totalExpenses = food + rent + clothes;
+    expensesTotal.innerText = totalExpenses;
+    return totalExpenses;
+};
 
 
 document.getElementById('calculate-btn').addEventListener('click', function () {
@@ -23,23 +38,31 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
     const rentAmount = inputValue('rent-input');
 
     // clothes input fild 
-    const clothesAmount = inputValue('clothes-input')
+    const clothesAmount = inputValue('clothes-input');
 
 
     // expenses total 
-    const expensesTotal = document.getElementById('expenses-total');
-    const expensesText = expensesTotal.innerText;
-    const expensesTotalAmount = parseFloat(expensesText);
+    const totalExpenses = expenses('expenses-total', foodAmount, rentAmount, clothesAmount);
 
-    const totalExpenses = foodAmount + rentAmount + clothesAmount;
-    expensesTotal.innerText = totalExpenses;
+    // balance left update
+    const leftAmount = outputValue('balance-left', incomeAmount, totalExpenses);
+});
 
-    // balance left update  
-    const balaceLeft = document.getElementById('balance-left')
-    const balanceLeftText = balaceLeft.innerText;
-    const balaceLeftAmount = parseFloat(balanceLeftText);
+document.getElementById('save-btn').addEventListener('click', function () {
 
-    balaceLeft.innerText = incomeAmount - totalExpenses;
+    // saving percent fild 
+    const savePercent = inputValue('percent-input');
+    // total left balence 
+    const leftAmount = outputValue('balance-left', inputValue('income-input'), expenses('expenses-total', inputValue('food-input'), inputValue('rent-input'), inputValue('clothes-input')));
+    // total saving amount fild
+    const saveing = document.getElementById('saving-amount');
+    const savingAmountText = saveing.innerText;
+    const totalSaveing = parseFloat(savingAmountText);
+
+    const totalSaveingAmount = (savePercent / 100) * leftAmount;
+    saveing.innerText = totalSaveingAmount;
+
+
 })
 
 
