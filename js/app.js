@@ -6,7 +6,7 @@ function inputValue(inputAmount) {
     return totalAmount;
 
 };
-// left balence 
+// left balence calculation
 function outputValue(idName, income, expenses) {
     const balaceLeft = document.getElementById(idName)
     const balanceLeftText = balaceLeft.innerText;
@@ -15,7 +15,7 @@ function outputValue(idName, income, expenses) {
     balaceLeft.innerText = laftAmount;
     return laftAmount;
 };
-// expenses total 
+// expenses total calculation
 function expenses(idName, food, rent, clothes) {
     const expensesTotal = document.getElementById(idName);
     const expensesText = expensesTotal.innerText;
@@ -58,9 +58,16 @@ document.getElementById('save-btn').addEventListener('click', function () {
     const saveing = document.getElementById('saving-amount');
     const savingAmountText = saveing.innerText;
     const totalSaveing = parseFloat(savingAmountText);
-
+    // percent calculation 
     const totalSaveingAmount = (savePercent / 100) * leftAmount;
     saveing.innerText = totalSaveingAmount;
+
+    // Remaining Balance calculation 
+    const remainingTotal = document.getElementById('remaining-balance');
+    const remainingTotalText = remainingTotal.innerText;
+    const remainingBalance = parseFloat(remainingTotalText);
+    const remainingTotalBalance = leftAmount - totalSaveingAmount;
+    remainingTotal.innerText = remainingTotalBalance;
 
 
 })
