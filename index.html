@@ -28,26 +28,26 @@
                 <div class="col-lg-6 col-md-6">
                     <div>
                         <h3 class="fw-bold">Income</h3>
-                        <label for="fname">Income:</label>
-                        <input class="mb-3 input" type="text" id="fname" name="">
+                        <label for="income-input">Income:</label>
+                        <input id="income-input" class="mb-3 input" type="text">
                     </div>
                     <div>
                         <h3 class="mb-3 fw-bold">Expenses</h3>
                         <label for="fname">Food:</label>
-                        <input class="mb-3 input food" type="text" id="fname" name=""><br>
+                        <input id="food-input" class="mb-3 input food" type="text"><br>
                         <label for="fname">Rent:</label>
-                        <input class="mb-3 input rent" type="text" id="fname" name=""><br>
+                        <input id="rent-input" class="mb-3 input rent" type="text"><br>
                         <label for="fname">Clothes:</label>
-                        <input class="mb-3 input" type="text" id="fname" name=""><br>
-                        <button class="mb-3 btn btn-primary">Calculate</button>
+                        <input class="mb-3 input" type="text"><br>
+                        <button id="calculate-btn" class="mb-3 btn btn-primary">Calculate</button>
                     </div>
                     <div>
-                        <h2 class="mb-3">Total Expenses: 000</h2>
+                        <h2 class="mb-3">Total Expenses: <span id="expenses-total">000</span></h2>
                         <h2 class="mb-3">Balance: 000</h2>
                     </div>
                     <div class="mb-3">
                         <label for="fname">Save:</label>
-                        <input class="input" type="text" id="fname" name=""> %
+                        <input class="input" type="text"> %
                         <button class="btn btn-primary">Save</button>
                     </div>
                     <div>
@@ -58,6 +58,7 @@
             </div>
         </section>
     </main>
+    <script src="js/app.js"></script>
 </body>
 
 </html>
